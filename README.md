@@ -1,8 +1,3 @@
-## API Docs
-login by visiting this [link](http://localhost:8001). 
-
-API documentation is automatically generated using Swagger. You can view documention by visiting this [link](http://localhost:8001/docs).
-
 ## Prerequisites
 
 Install Docker-compose, If you don't want to use Docker, then you just need Python3 and Postgres installed.
@@ -43,8 +38,37 @@ This will run server on [http://localhost:8001](http://localhost:8001)
 
 ### Create superuser
 
-If you want, you can create initial super-user with next commad:
+you can create initial super-user with next commad:
 
 ```bash
 ./manage.py createsuperuser
+```
+
+## API Docs
+login by visiting this [link](http://localhost:8001). 
+
+API documentation is automatically generated using Swagger. You can view documention by visiting this [link](http://localhost:8001/docs).
+
+
+## for Post man
+Genrate token using this endpoint at swagger
+/api/v1/token/
+```bash
+http://0.0.0.0:8001/api/v1/token/
+```
+
+Now hit 
+
+```bash
+http://0.0.0.0:8001/bonds/get_published?usd=false
+```
+In the Header provide 
+```bash
+Authorization: Bearer 'paste token here'
+```
+
+## Add moere user
+
+```bash
+http://localhost:8001/api/v1/users/
 ```
