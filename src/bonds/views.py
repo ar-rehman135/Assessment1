@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Bonds, StatusEnum
-from .serializers import BondsSerializer, create_bond
+from .serializers import BondsSerializer, BondsUSDSerializer, create_bond
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
@@ -18,6 +18,23 @@ class BondsViewSet():
         
         bonds = Bonds.objects.all()
         serialzer = BondsSerializer(bonds, many=True)
+
+        return JsonResponse({'Bonds': serialzer.data})
+    
+    
+    usd_param = openapi.Parameter('usd', openapi.IN_QUERY, description="Show in USD", type=openapi.TYPE_BOOLEAN)
+
+    @swagger_auto_schema(method='get', manual_parameters=[usd_param], responses={200: BondsSerializer(many=True)})
+    @api_view(['GET'])
+    def get_published(request):
+        show_in_usd = request.GET['usd'] == 'true'
+        bonds = Bonds.objects.all().filter(status=StatusEnum.published)
+        print(show_in_usd)
+        print(type(show_in_usd))
+        if show_in_usd:
+            serialzer = BondsUSDSerializer(bonds, many=True)
+        else:
+            serialzer = BondsSerializer(bonds, many=True)
 
         return JsonResponse({'Bonds': serialzer.data})
 

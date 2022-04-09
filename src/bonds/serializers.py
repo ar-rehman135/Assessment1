@@ -11,6 +11,11 @@ class BondsSerializer(serializers.ModelSerializer):
         model = Bonds
         fields = ['id', 'bond_name', 'number_of_bonds', 'selling_price_mxn', 'user_id', 'status', 'buyer_id']
 
+class BondsUSDSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bonds
+        fields = ['id', 'bond_name', 'number_of_bonds', 'selling_price_usd', 'user_id', 'status', 'buyer_id']
+
 
 class create_bond(serializers.ModelSerializer):
     class Meta:

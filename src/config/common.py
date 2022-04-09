@@ -351,3 +351,5 @@ SUMMERNOTE_CONFIG = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+BANXICO_TOKEN = '0b15dc0d5543fef02cfe4a6b5db9a2bda16d31eaf470f12a6e8992ab097f4c11'

@@ -40,6 +40,7 @@ urlpatterns = [
     
     # Bonds
     path('bonds/all', BondsViewSet.bonds_list),
+    path('bonds/get_published', BondsViewSet.get_published),
     path('bonds/create', BondsViewSet.bonds_create),
     path('bonds/purchase/<str:id>', BondsViewSet.bonds_purchase),
 
