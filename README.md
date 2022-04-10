@@ -57,7 +57,7 @@ Genrate token using this endpoint at swagger
 http://0.0.0.0:8001/api/v1/token/
 ```
 
-Now hit 
+Now to get published bonds hit 
 
 ```bash
 http://0.0.0.0:8001/bonds/get_published?usd=false
@@ -65,6 +65,18 @@ http://0.0.0.0:8001/bonds/get_published?usd=false
 In the Header provide 
 ```bash
 Authorization: Bearer 'paste token here'
+```
+
+To publish bonds use API
+
+```bash
+http://0.0.0.0:8001/bonds/create
+```
+
+To purchase bonds use API
+
+```bash
+bonds/purchase/{id}
 ```
 
 ## Add more user
