@@ -67,7 +67,7 @@ In the Header provide
 Authorization: Bearer 'paste token here'
 ```
 
-## Add moere user
+## Add more user
 
 ```bash
 http://localhost:8001/api/v1/users/
