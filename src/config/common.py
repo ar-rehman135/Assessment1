@@ -75,10 +75,6 @@ EMAIL_HOST = os.getenv('EMAIL_HOST', 'localhost')
 EMAIL_PORT = os.getenv('EMAIL_PORT', 1025)
 EMAIL_FROM = os.getenv('EMAIL_FROM', 'noreply@somehost.local')
 
-# Celery
-BROKER_URL = os.getenv('BROKER_URL', 'redis://redis:6379')
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://redis:6379')
-
 ADMINS = ()
 
 # Sentry
@@ -86,12 +82,6 @@ sentry_sdk.init(dsn=os.getenv('SENTRY_DSN', ''), integrations=[DjangoIntegration
 
 # CORS
 CORS_ORIGIN_ALLOW_ALL = True
-
-# CELERY
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
 
 # Postgres
 DATABASES = {

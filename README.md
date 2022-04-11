@@ -84,3 +84,15 @@ bonds/purchase/{id}
 ```bash
 http://localhost:8001/api/v1/users/
 ```
+## run unit tests
+Enter in container 
+```bash
+sudo docker exec -it mtrade_bonds_web_1 /bin/bash
+
+```
+
+in the container run pytest
+
+```bash
+pytest
+```
