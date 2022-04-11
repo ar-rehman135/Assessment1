@@ -39,9 +39,9 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     # Bonds
-    path('bonds/all', BondsViewSet.bonds_list),
+    path('bonds/all', BondsViewSet.bonds_list, name='bonds_list'),
     path('bonds/get_published', BondsViewSet.get_published),
-    path('bonds/create', BondsViewSet.bonds_create),
+    path('bonds/create', BondsViewSet.bonds_create, name='bonds_create'),
     path('bonds/purchase/<str:id>', BondsViewSet.bonds_purchase),
 
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
